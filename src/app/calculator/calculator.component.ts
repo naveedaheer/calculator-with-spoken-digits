@@ -123,4 +123,17 @@ audio.play();
     }
 
   }
+
+  decimalToOctal(){
+    this.currentNumber = (Number(this.currentNumber)).toString(8);
+  }
+  octalToDecimal(){
+    this.currentNumber = (parseInt(this.currentNumber, 8).toString());
+  }
+  binaryToDecimal(){
+    this.currentNumber = (Number(this.currentNumber)).toString(2);
+  }
+  decimalToBinary(){
+    this.currentNumber = (parseInt(this.currentNumber, 2).toString());
+  }
 }
