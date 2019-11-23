@@ -16,6 +16,10 @@
   <input type="text" class="calculator-screen" [value]="currentNumber" disabled />
   
   <div class="calculator-keys">
+    <button type="button" (click) = "DecimalToOctal()" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">Decimal To Octal</button>
+    <button type="button" (click) = "getOperation('+')" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">Octal To Decimal</button>    
+    <button type="button" (click) = "getOperation('+')" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">Binary To Decimal</button>
+    <button type="button" (click) = "getOperation('+')" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">Decimal To Binary</button>
     
     <button type="button" (click) = "getOperation('+')" class="operator" value="+" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">+</button>
     <button type="button" (click) = "getOperation('-')" class="operator" value="-" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">-</button>
