@@ -16,6 +16,11 @@
   <input type="text" class="calculator-screen" [value]="currentNumber" disabled />
   
   <div class="calculator-keys">
+    <!-- https://stackoverflow.com/questions/30954085/conversion-from-decimal-to-octal-binary-and-hexadecimal-in-javascript -->
+    <button type="button" (click) = "decimalToOctal()" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age < 16 ? 'deeppink' : '','color':age < 16 ? 'white' : ''}">Decimal To Octal</button>
+    <button type="button" (click) = "octalToDecimal()" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age < 16 ? 'deeppink' : '','color':age < 16 ? 'white' : ''}">Octal To Decimal</button>    
+    <button type="button" (click) = "binaryToDecimal()" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age < 16 ? 'deeppink' : '','color':age < 16 ? 'white' : ''}">Binary To Decimal</button>
+    <button type="button" (click) = "decimalToBinary()" class="operator"  style="    font-weight: bold;    font-size: 12px;" [ngStyle]="{'background-color':age < 16 ? 'deeppink' : '','color':age < 16 ? 'white' : ''}">Decimal To Binary</button>
     
     <button type="button" (click) = "getOperation('+')" class="operator" value="+" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">+</button>
     <button type="button" (click) = "getOperation('-')" class="operator" value="-" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">-</button>

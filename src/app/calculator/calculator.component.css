@@ -34,7 +34,6 @@
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
     width: 400px;
-    margin-top: 10%;
   }
 
 .calculator-screen {
@@ -92,7 +91,7 @@
     border-color: #337cac;
     color: #fff;
     height: 100%;
-    grid-area: 2 / 4 / 6 / 5;
+    grid-area: 3 / 4 / 7 / 5;
   }
   
  .equal-sign:hover {
