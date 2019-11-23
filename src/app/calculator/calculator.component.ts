@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
@@ -6,15 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+   @ViewChild('ageInput', {static:false}) ageInput: ElementRef;
 
   currentNumber = '0';
   firstOperand = null;
   operator = null;
   waitForSecondNumber = false;
+  age;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setAge(){
+  this.age = this.ageInput.nativeElement.value;
+  }
+
+  back(){
+    this.age = undefined;
   }
 
   public getNumber(v: string){

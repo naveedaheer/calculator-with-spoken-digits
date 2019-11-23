@@ -1,34 +1,50 @@
+<div *ngIf="!age" style="text-align: center;">
+<h1>What's your Age?</h1>
+<div>
+<input class="age-input" #ageInput type="text" pattern="\d*" name="age" maxlength="3" minlength="1">
+<button class="age-btn" (click)="setAge()">Submit</button>
+</div>
+</div>
+
+<ng-container *ngIf="age">
+<button style="background-color:grey;" class="age-btn" (click)="back()">Back</button>
+<div [ngClass]="{'kid':age<16, 'elder':age>59}" style="    display: flex;
+    justify-content: center;">
+
 <div class="calculator">
 
   <input type="text" class="calculator-screen" [value]="currentNumber" disabled />
   
   <div class="calculator-keys">
     
-    <button type="button" (click) = "getOperation('+')" class="operator" value="+">+</button>
-    <button type="button" (click) = "getOperation('-')" class="operator" value="-">-</button>
-    <button type="button" (click) = "getOperation('*')" class="operator" value="*">&times;</button>
-    <button type="button" (click) = "getOperation('/')" class="operator" value="/">&divide;</button>
+    <button type="button" (click) = "getOperation('+')" class="operator" value="+" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">+</button>
+    <button type="button" (click) = "getOperation('-')" class="operator" value="-" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">-</button>
+    <button type="button" (click) = "getOperation('*')" class="operator" value="*" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">&times;</button>
+    <button type="button" (click) = "getOperation('/')" class="operator" value="/" [ngStyle]="{'background-color':age<16 ? 'gold' : ''}">&divide;</button>
 
-    <button type="button" (click) = "getNumber('7')" value="7">7</button>
-    <button type="button" (click) = "getNumber('8')" value="8">8</button>
-    <button type="button" (click) = "getNumber('9')" value="9">9</button>
-
-
-    <button type="button" (click) = "getNumber('4')" value="4">4</button>
-    <button type="button" (click) = "getNumber('5')" value="5">5</button>
-    <button type="button" (click) = "getNumber('6')" value="6">6</button>
+    <button type="button" (click) = "getNumber('7')" value="7" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">7</button>
+    <button type="button" (click) = "getNumber('8')" value="8" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">8</button>
+    <button type="button" (click) = "getNumber('9')" value="9" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">9</button>
 
 
-    <button type="button" (click) = "getNumber('1')" value="1">1</button>
-    <button type="button" (click) = "getNumber('2')" value="2">2</button>
-    <button type="button" (click) = "getNumber('3')" value="3">3</button>
+    <button type="button" (click) = "getNumber('4')" value="4" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">4</button>
+    <button type="button" (click) = "getNumber('5')" value="5" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">5</button>
+    <button type="button" (click) = "getNumber('6')" value="6" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">6</button>
 
 
-    <button type="button" (click) = "getNumber('0')" value="0">0</button>
-    <button type="button" (click) = "getDecimal()" class="decimal" value=".">.</button>
+    <button type="button" (click) = "getNumber('1')" value="1" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">1</button>
+    <button type="button" (click) = "getNumber('2')" value="2" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">2</button>
+    <button type="button" (click) = "getNumber('3')" value="3" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">3</button>
+
+
+    <button type="button" (click) = "getNumber('0')" value="0" [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">0</button>
+    <button type="button" (click) = "getDecimal()" class="decimal" value="." [ngStyle]="{'background-color':age<16 ? 'yellowgreen' : ''}">.</button>
     <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>
 
     <button type="button" (click) = "getOperation('=')" class="equal-sign" value="=">=</button>
 
   </div>
 </div>
+
+</div>
+</ng-container>
