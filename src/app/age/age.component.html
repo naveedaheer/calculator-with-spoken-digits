@@ -1,7 +1,0 @@
-<div>
-  <h1>Enter Your Age</h1>
-  <input type="text" [(ngModel)]="age">
-  <div>
-      <h1 [ngClass]="{'kid': age<16 , 'normal': age > 15 && age < 60, 'elder' : age >59}">{{age}}</h1>
-  </div>
-</div>
